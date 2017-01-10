@@ -1,0 +1,11 @@
+script:
+- cd $TRAVIS_BUILD_DIR/..
+- zip -r repository.beardypig.plugins-$TRAVIS_TAG.zip repository.beardypig.plugins/{addon.xml,changelog.md,LICENSE,README.md}
+deploy:
+  provider: releases
+  api_key:
+    secure: ONzbatJPoS5gbWDJyUq2mvBp5VyP75NoSYN8k2RmQKaXUcQxjod9Gmrr5AaOtWMQ2F/O/p6Jrs+7924DIlorGvjb5ZXKWAp7yxum1uYcYsyUweEgcZz/C1ANsxaucOfh1pRaHXOmOVFWACqqUVCa61yvHhxszBhl1kOlpJ2c4LrlhvQVpsYMecv76dbDwxX8dnJS54vsCkFKR93opNFjgV+eKt1UdxwpMWow0KNKmu1ZL1Em3+bKDMUuujcG2deUxH8PLviKOqS7LTT6yDVlbQXmBos3YlDnzQaoFdbw/+FocPOCT6TxImRy3Ie+HRIkJnDFP4UsJX7OqNWT5lM/fRzDIjDh5yztS7Iw5eGKG9ZgGMch++E6XVbtZelRvpbsWBWv+PDuURUZdISpKIJAWri+qDRpaZGSaANd8IlQ/XFAXa7BXP3UXWdAkyjm0eWHC2PAM1d+GfX9qbFzFrqX8fd9PdRhta77lYFIbWo/0iQ+b/hPHdW7MhtOmQ8/5EPH3Bsx5M0wDe395ewQfGgwzMbIanQ/8Vp3tA2O5g5clB0CqX+quC/BwmON3Ppm+fSjWFyfIjUtMGRL08DwcVHNV/Qfzd3Kv3b4M0m+TWxJtInmXNIL8Q9tKWRzgctRu/yIkiRTH1CAU5p+9D/INbinZjD52T5pNndxf/79dN6PbWw=
+  file: repository.beardypig.plugins-$TRAVIS_TAG.zip
+  on:
+    repo: beardypig/repository.beardypig.plugins
+    tags: true
