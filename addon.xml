@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.beardypig.plugins" name="beardypig Add-on Repository" version="1.0.1" provider-name="beardypig">
+    <extension point="xbmc.addon.repository" name="beardypig Add-on Repository">
+        <info>https://raw.githubusercontent.com/beardypig/xbmc.beardypig.plugins/deploy/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/beardypig/xbmc.beardypig.plugins/deploy/addons.xml.md5</checksum>
+        <datadir zip="true">https://github.com/beardypig/xbmc.beardypig.plugins/raw/deploy/plugins/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Install Add-ons from beardypig Repository</summary>
+        <description>Add-ons for XBMC</description>
+        <disclaimer>by beardypig</disclaimer>
+        <platform>all</platform>
+    </extension>
+</addon>
