@@ -1,5 +1,7 @@
 APPNAME = "repository.beardypig.plugins"
 VERSION = "1.1.0"
+BASEPATH = "https://xbmc.beardypig.plugins.s3-website-us-east-1.amazonaws.com"
+
 out = "build"
 
 
@@ -8,7 +10,8 @@ def configure(ctx):
 
 
 def build(bld):
-    bld(features="subst", source="addon.xml.in", target="addon.xml", APPNAME=APPNAME, VERSION=VERSION)
+    bld(features="subst", source="addon.xml.in", target="addon.xml",
+        APPNAME=APPNAME, VERSION=VERSION, BASEPATH=BASEPATH)
     for f in ('LICENSE', 'changelog.md', 'README.md'):
         bld(rule='cp ${SRC} ${TGT}', source=bld.path.make_node(f), target=bld.path.get_bld().make_node(f))
 

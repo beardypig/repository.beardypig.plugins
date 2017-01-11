@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="@APPNAME@" name="beardypig Add-on Repository" version="@VERSION@" provider-name="beardypig">
     <extension point="xbmc.addon.repository" name="beardypig Add-on Repository">
-        <info>https://xbmc.beardypig.plugins.s3-website-us-east-1.amazonaws.com/addons.xml</info>
-        <checksum>https://xbmc.beardypig.plugins.s3-website-us-east-1.amazonaws.com/addons.xml.md5</checksum>
-        <datadir zip="true">https://xbmc.beardypig.plugins.s3-website-us-east-1.amazonaws.com/addons/</datadir>
+        <info>@BASEPATH@/addons.xml</info>
+        <checksum>@BASEPATH@/addons.xml.md5</checksum>
+        <datadir zip="true">@BASEPATH@/addons/</datadir>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>Install Add-ons from beardypig Repository</summary>
