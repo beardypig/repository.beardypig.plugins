@@ -2,6 +2,8 @@ sudo: false
 language: python
 python:
 - '3.5'
+env:
+- VERSION=$TRAVIS_TAG
 script:
 - python waf configure clean build dist
 after_success:
