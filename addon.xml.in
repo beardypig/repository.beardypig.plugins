@@ -2,7 +2,7 @@
 <addon id="@APPNAME@" name="beardypig Add-on Repository" version="@VERSION@" provider-name="beardypig">
     <extension point="xbmc.addon.repository" name="beardypig Add-on Repository">
         <info>@BASEPATH@/addons.xml</info>
-        <checksum>@BASEPATH@/addons.xml.md5</checksum>
+        <checksum>@BASEPATH@/last_updated</checksum>
         <datadir zip="true">@BASEPATH@/addons/</datadir>
     </extension>
     <extension point="xbmc.addon.metadata">
