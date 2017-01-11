@@ -3,12 +3,15 @@ language: python
 python:
 - '3.5'
 env:
-- VERSION=$TRAVIS_TAG
+- VERSION=${TRAVIS_TAG:-SNAPSHOT}
 script:
-- python waf configure clean build dist
+- ./waf configure clean build dist
+- pushd build
+- md5sum "repository.beardypig.plugins-${VERSION}.zip" > "repository.beardypig.plugins-${VERSION}.zip.md5"
+- popd
 before_deploy:
 - mkdir -p dist/
-- cp build/*.zip build/addon.xml dist/
+- cp build/*.zip build/*.zip.md5 build/addon.xml dist/
 deploy:
   - provider: s3
     access_key_id: AKIAJA536STKTMHCZFZQ
@@ -24,7 +27,7 @@ deploy:
   - provider: releases
     api_key:
       secure: ONzbatJPoS5gbWDJyUq2mvBp5VyP75NoSYN8k2RmQKaXUcQxjod9Gmrr5AaOtWMQ2F/O/p6Jrs+7924DIlorGvjb5ZXKWAp7yxum1uYcYsyUweEgcZz/C1ANsxaucOfh1pRaHXOmOVFWACqqUVCa61yvHhxszBhl1kOlpJ2c4LrlhvQVpsYMecv76dbDwxX8dnJS54vsCkFKR93opNFjgV+eKt1UdxwpMWow0KNKmu1ZL1Em3+bKDMUuujcG2deUxH8PLviKOqS7LTT6yDVlbQXmBos3YlDnzQaoFdbw/+FocPOCT6TxImRy3Ie+HRIkJnDFP4UsJX7OqNWT5lM/fRzDIjDh5yztS7Iw5eGKG9ZgGMch++E6XVbtZelRvpbsWBWv+PDuURUZdISpKIJAWri+qDRpaZGSaANd8IlQ/XFAXa7BXP3UXWdAkyjm0eWHC2PAM1d+GfX9qbFzFrqX8fd9PdRhta77lYFIbWo/0iQ+b/hPHdW7MhtOmQ8/5EPH3Bsx5M0wDe395ewQfGgwzMbIanQ/8Vp3tA2O5g5clB0CqX+quC/BwmON3Ppm+fSjWFyfIjUtMGRL08DwcVHNV/Qfzd3Kv3b4M0m+TWxJtInmXNIL8Q9tKWRzgctRu/yIkiRTH1CAU5p+9D/INbinZjD52T5pNndxf/79dN6PbWw=
-    file: $TRAVIS_BUILD_DIR/build/repository.beardypig.plugins-$TRAVIS_TAG.zip
+    file: $TRAVIS_BUILD_DIR/build/repository.beardypig.plugins-$VERSION.zip
     on:
       repo: beardypig/repository.beardypig.plugins
       tags: true
