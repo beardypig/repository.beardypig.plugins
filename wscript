@@ -1,7 +1,7 @@
 import os
 APPNAME = "repository.beardypig.plugins"
 VERSION = os.environ.get("VERSION") or "SNAPSHOT"
-BASEPATH = "https://xbmc.beardypig.plugins.s3-website-us-east-1.amazonaws.com"
+BASEPATH = "https://s3.amazonaws.com/xbmc.beardypig.plugins"
 
 out = "build"
 
