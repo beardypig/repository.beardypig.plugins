@@ -1,0 +1,10 @@
+Version 1.2.1
+- Fixed changelog
+
+Version 1.2.0
+- Fixed some bugs in the auto indexing
+- Hosted on AWS
+
+Version 1.0.0
+- Initial version of beardypig repo
+
