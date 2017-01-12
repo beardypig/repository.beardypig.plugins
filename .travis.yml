@@ -34,5 +34,5 @@ deploy:
 # Update the addon index
 after_deploy:
 - gem install travis
-- curl -LO curl -LO https://raw.github.com/mernst/plume-lib/master/bin/trigger-travis.sh
+- curl -LO https://raw.github.com/mernst/plume-lib/master/bin/trigger-travis.sh
 - sh trigger-travis.sh beardypig xbmc.beardypig.plugins $TRAVIS_ACCESS_TOKEN
